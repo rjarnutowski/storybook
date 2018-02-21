@@ -6,5 +6,19 @@
     "start": "node app.js"
   },
   "dependencies": {
-  }
+    "express": "^4.16.2",
+    "mongoose": "^5.0.6"
+  },
+  "description": "app to share public or write private stories",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rjarnutowski/storybook.git"
+  },
+  "author": "Ryan Jarnutowski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rjarnutowski/storybook/issues"
+  },
+  "homepage": "https://github.com/rjarnutowski/storybook#readme"
 }

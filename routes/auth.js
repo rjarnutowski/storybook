@@ -15,4 +15,12 @@ router.get('/google/callback',
         res.redirect('/dashboard');
     });
 
-module.exports = router
+router.get('/verify',(req,res)=>{
+    if (req.user){
+        console.log(req.user);
+    } else {
+        console.log('not autherized');
+    }
+});
+
+module.exports = router;

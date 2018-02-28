@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const cookieParser = require('cookie-parser');
 const passport = require('passport');
+const bodyParser = require('body-parser')
 
 // Load Models
 require('./models/Users');
@@ -42,6 +43,10 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
+// Body Parser Middleware
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 // Passport Middleware
 app.use(passport.initialize());

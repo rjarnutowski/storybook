@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {ensureAuthenticated, ensureGuest} = require('../helpers/auth');
 
+
 // Stories Index
 router.get('/', (req, res) => {
     res.render('stories/index');
@@ -12,5 +13,9 @@ router.get('/add', ensureAuthenticated, (req, res) => {
     res.render('stories/add');
 });
 
+// Process Add Story
+router.post('/',(req, res)=>{
+
+})
 
 module.exports = router;

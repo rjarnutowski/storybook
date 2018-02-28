@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const passport = require('passport');
 const bodyParser = require('body-parser')
 
+
 // Load Models
 require('./models/User');
 require('./models/Story');
@@ -21,6 +22,12 @@ const stories = require('./routes/stories');
 // Loag Keys
 const keys = require('./config/keys');
 
+// handlebars helper]
+const {
+    truncate,
+    stripTags
+} = require('./helpers/hbs');
+
 
 mongoose.Promise = global.Promise;
 
@@ -33,6 +40,10 @@ mongoose.connect(keys.mongoURI, {})
 const app = express();
 
 app.engine('handlebars', exphbs({
+    helerps: {
+        truncate: truncate,
+        stripTags: stripTags
+    },
     defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');

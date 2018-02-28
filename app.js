@@ -25,7 +25,8 @@ const keys = require('./config/keys');
 // handlebars helper]
 const {
     truncate,
-    stripTags
+    stripTags,
+    formatDate
 } = require('./helpers/hbs');
 
 
@@ -40,9 +41,10 @@ mongoose.connect(keys.mongoURI, {})
 const app = express();
 
 app.engine('handlebars', exphbs({
-    helerps: {
+    helpers: {
         truncate: truncate,
-        stripTags: stripTags
+        stripTags: stripTags,
+        formatDate: formatDate
     },
     defaultLayout: 'main'
 }));

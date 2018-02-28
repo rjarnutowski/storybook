@@ -3,7 +3,7 @@
         <h3>{{story.title}}</h3>
         <div class="car story">
             <div class="card-content">
-                <span class="card-title">{{story.date}}</span>
+                <span class="card-title">{{formatDate story.date 'MMMM do YYYY'}}</span>
                 {{{story.body}}}
             </div>
         </div>
@@ -15,7 +15,7 @@
                 <span class="card-title">
                     {{story.user.firstName}} {{story.user.lastName}}
                 </span>
-                <img src="{{story.user.img}}" class="circle responsive-img">
+                <img src="{{story.user.image}}" class="circle responsive-img">
             </div>
             <div class="card-action">
                 <a href="story/user/{{story.user.id}}">More from {{story.user.firstName}}</a>

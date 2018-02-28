@@ -18,7 +18,7 @@ router.get('/', (req, res) => {
 
 // Show Single Story
 router.get(`/show/:id`, (req, res) =>{
-    Story.findeOne({
+    Story.findOne({
         _id: req.params.id
     })
         .populate('user')

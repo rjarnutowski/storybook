@@ -8,7 +8,8 @@ const passport = require('passport');
 const bodyParser = require('body-parser')
 
 // Load Models
-require('./models/Users');
+require('./models/User');
+require('./models/Story');
 
 // Passport Config
 require('./config/passport')(passport);

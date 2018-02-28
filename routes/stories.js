@@ -9,7 +9,7 @@ const {ensureAuthenticated, ensureGuest} = require('../helpers/auth');
 
 // Stories Index
 router.get('/', (req, res) => {
-    Story.find({staus: 'public'})
+    Story.find({status: 'public'})
         .populate('user')
         .then(stories => {
             res.render('stories/index', {stories: stories});
